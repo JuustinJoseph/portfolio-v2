@@ -269,3 +269,11 @@ export const education: School[] = [
       "Focused on software development, object-oriented programming, database management, web application development, and software engineering principles.",
   },
 ];
+
+/** Contact form status messages. */
+export const contactForm = {
+  success: "Thanks! Your message is on its way. I'll get back to you soon.",
+  invalid: "Please fill in your name, a valid email and a message.",
+  failed:
+    "Something went wrong sending your message. Please try again or email me directly.",
+};
