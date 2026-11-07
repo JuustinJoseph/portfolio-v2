@@ -37,7 +37,6 @@ export type Project = {
   status?: string;
 };
 
-// TODO: add each project's link (href)
 export const projects: Project[] = [
   {
     name: "AI-Powered Documentation Assistant",
@@ -57,6 +56,7 @@ export const projects: Project[] = [
   },
   {
     name: "Spotifiler",
+    href: "https://spotifiler.vercel.app/",
     icon: "music",
     description:
       "Built a Spotify-powered music app using React. Worked with components, props, state, hooks, and integrated the Spotify Developer API to fetch user data. Implemented OAuth authentication and deployed the app on Vercel.",
@@ -70,7 +70,24 @@ export const projects: Project[] = [
     ],
   },
   {
+    name: "Fragments Microservice",
+    href: "https://github.com/JuustinJoseph/fragments",
+    icon: "puzzle",
+    description:
+      "Designed and implemented a cloud-based microservice using Node.js and Express.js to manage and convert text and image fragments for a manufacturing ecosystem. Deployed the microservice to AWS Lambda with API Gateway, ensuring scalability and cost-efficiency. Integrated GitHub Actions for automated CI/CD, streamlining deployments. Developed functionality for format conversion, utilizing Sharp.js for image processing and text parsers for text transformation.",
+    tags: ["Node.js", "Express.js", "AWS Lambda", "GitHub Actions", "Sharp.js"],
+  },
+  {
+    name: "Brogram",
+    href: "https://brogram-beta.vercel.app/",
+    icon: "dumbbell",
+    description:
+      "Developed a Workout Tracking Web App using React hosted on Vercel, managing workout plans and user progress. Optimized data persistence using local storage, ensuring workout progress is saved across sessions.",
+    tags: ["React.js", "HTML & CSS", "JavaScript"],
+  },
+  {
     name: "FreelanceU",
+    href: "https://prj666-1.onrender.com/",
     icon: "briefcase",
     description:
       "Developed a modern freelancing platform using React.js and Styled-Components to deliver a seamless user experience. Implemented AWS Cognito for secure authentication and AWS S3 for optimized static asset delivery, with hosting managed via AWS Amplify. Built a scalable backend using Node.js, Express.js, and MongoDB to ensure efficient data handling and performance.",
@@ -86,21 +103,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Fragments Microservice",
-    icon: "puzzle",
-    description:
-      "Designed and implemented a cloud-based microservice using Node.js and Express.js to manage and convert text and image fragments for a manufacturing ecosystem. Deployed the microservice to AWS Lambda with API Gateway, ensuring scalability and cost-efficiency. Integrated GitHub Actions for automated CI/CD, streamlining deployments. Developed functionality for format conversion, utilizing Sharp.js for image processing and text parsers for text transformation.",
-    tags: ["Node.js", "Express.js", "AWS Lambda", "GitHub Actions", "Sharp.js"],
-  },
-  {
-    name: "Brogram",
-    icon: "dumbbell",
-    description:
-      "Developed a Workout Tracking Web App using React hosted on Vercel, managing workout plans and user progress. Optimized data persistence using local storage, ensuring workout progress is saved across sessions.",
-    tags: ["React.js", "HTML & CSS", "JavaScript"],
-  },
-  {
     name: "The APOD Project",
+    href: "https://nasa-react-app-ahfr.onrender.com/",
     icon: "planet",
     description:
       "A Vite + React app that fetches and displays NASA's Astronomy Picture of the Day (APOD). It retrieves the image, title, and description using the Fetch API and presents them in a clean, responsive layout using HTML and CSS. The app ensures a smooth user experience with fast loading times and a simple yet visually appealing design. 🚀",

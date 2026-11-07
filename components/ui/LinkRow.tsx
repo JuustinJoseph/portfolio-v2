@@ -63,7 +63,15 @@ export function LinkRow({
     "group flex items-start gap-5 rounded-xl p-3 transition-colors";
 
   return href ? (
-    <Link href={href} className={`${classes} hover:bg-surface`}>
+    <Link
+      href={href}
+      className={`${classes} hover:bg-surface`}
+      // External links (live sites, GitHub) open in a new tab.
+      {...(href.startsWith("http") && {
+        target: "_blank",
+        rel: "noopener noreferrer",
+      })}
+    >
       {body}
     </Link>
   ) : (
