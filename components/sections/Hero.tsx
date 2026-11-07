@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { socialIcons } from "@/components/ui/Icons";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 import { site } from "@/lib/site";
 
 /**
@@ -9,7 +8,7 @@ import { site } from "@/lib/site";
  * sections scroll up underneath it.
  */
 export function Hero() {
-  const { name, tagline, location, socials } = site;
+  const { name, role, location } = site;
 
   return (
     <section className="bg-accent-gradient relative flex min-h-svh overflow-hidden">
@@ -22,30 +21,13 @@ export function Hero() {
             {name.last}
           </h1>
           <p className="mt-10 text-2xl leading-tight tracking-tight md:text-4xl">
-            {tagline}
+            {role}
           </p>
         </div>
 
         {/* Footer row: socials left, location right */}
         <div className="animate-slide-up flex items-end justify-between text-sm">
-          <ul className="flex items-center gap-5">
-            {socials.map((s) => {
-              const Icon = socialIcons[s.icon];
-              return (
-                <li key={s.label}>
-                  <Link
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    className="text-paper/90 hover:text-paper block transition-colors"
-                  >
-                    <Icon className="size-6" />
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          <SocialLinks />
           <span className="text-paper/90">{location}</span>
         </div>
       </Container>

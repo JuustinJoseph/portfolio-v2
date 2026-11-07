@@ -1,30 +1,15 @@
 /**
- * Page content for the sections below the hero.
+ * Page content for the tagline card and the sections below the hero.
  *
  * Everything marked TODO is placeholder copy. Swap in your real details;
  * the components render whatever is in these arrays, so adding or removing
  * an item needs no component changes.
  */
 
-/** Short intro shown under the "Software Developer" heading. */
-export const about = {
-  // TODO: write this in your own words
-  intro:
-    "I build web applications end to end, from the database to the interface. I care about software that is fast, clear, and easy to maintain.",
-};
-
-/** Big numbers row. TODO: use real numbers, or delete the row in About.tsx. */
-export const stats = [
-  { value: "+3", label: "Years of experience" },
-  { value: "+10", label: "Projects completed" },
-  { value: "+5", label: "Technologies shipped" },
-];
-
-/** The two coloured cards under the stats. `tone` picks the card colour. */
-export const focusCards = [
-  { title: "Full-stack web apps", tone: "accent" },
-  { title: "TypeScript, React, Next.js, Node", tone: "highlight" },
-] as const;
+/** Tagline: short line about you, shown in the card beneath the portrait photo. */
+// TODO: write this in your own words
+export const tagline =
+  "I build web applications end to end, from the database to the interface. I care about software that is fast, clear, and easy to maintain.";
 
 export type Project = {
   name: string;

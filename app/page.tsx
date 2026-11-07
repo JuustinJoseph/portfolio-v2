@@ -1,6 +1,5 @@
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import { Experience } from "@/components/sections/Experience";
 import { Hero } from "@/components/sections/Hero";
@@ -25,7 +24,6 @@ export default function Home() {
         <div>
           <Hero />
           <Container className="flex max-w-3xl flex-col gap-32 py-24">
-            <About />
             <Projects />
             <Experience />
             <Stack />
