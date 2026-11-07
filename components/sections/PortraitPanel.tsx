@@ -11,7 +11,7 @@ export function PortraitPanel() {
   if (!portrait) return null;
 
   return (
-    <div className="bg-accent-dark relative h-[70svh] lg:sticky lg:top-0 lg:h-svh">
+    <div className="bg-accent-dark animate-slide-right relative h-[70svh] lg:sticky lg:top-0 lg:h-svh">
       <Image
         src={portrait}
         alt={`${name.first} ${name.last}`}

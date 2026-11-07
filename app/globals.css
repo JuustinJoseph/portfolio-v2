@@ -23,6 +23,11 @@
 
   /* Typography (variables are injected by next/font in app/layout.tsx) */
   --font-sans: var(--font-geist-sans);
+
+  /* Entrance animations: a short fade plus a small slide. Use as
+     `animate-slide-up` (text) or `animate-slide-right` (photo). */
+  --animate-slide-up: slide-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-slide-right: slide-right 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 html {
@@ -45,4 +50,26 @@ body {
     var(--color-accent-deep) 45%,
     var(--color-accent-dark) 100%
   );
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+}
+
+/* Skip entrance animations for people who've asked for less motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-up,
+  .animate-slide-right {
+    animation: none;
+  }
 }
