@@ -1,25 +1,40 @@
 "use client";
 
+import { useActionState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/Button";
 import { Field, inputClasses } from "@/components/ui/Field";
-import { site } from "@/lib/site";
+import { cn } from "@/lib/cn";
+import { sendContactMessage, type ContactState } from "@/app/actions/contact";
 
-/**
- * Contact form. There is no backend yet, so submitting opens the visitor's
- * email app with the message pre-filled. To send from the server instead,
- * swap `handleSubmit` for a Server Action or a form service.
- */
+const initialState: ContactState = { status: "idle" };
+
+/** Contact form. Submits to a Server Action that emails the message via Resend. */
 export function ContactForm() {
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const subject = `Portfolio enquiry from ${data.get("name")}`;
-    const body = `${data.get("message")}\n\n— ${data.get("name")} (${data.get("email")})`;
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
+  const [state, formAction, pending] = useActionState(
+    sendContactMessage,
+    initialState,
+  );
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (state.status === "success") formRef.current?.reset();
+  }, [state]);
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2">
+    <form
+      ref={formRef}
+      action={formAction}
+      className="grid gap-5 sm:grid-cols-2"
+    >
+      {/* Honeypot for bots; hidden from people and screen readers. */}
+      <input
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
       <Field label="Name" htmlFor="name">
         <input
           id="name"
@@ -52,10 +67,22 @@ export function ContactForm() {
       <Button
         type="submit"
         variant="accent"
+        disabled={pending}
         className="rounded-lg sm:col-span-2"
       >
-        Send message
+        {pending ? "Sending…" : "Send message"}
       </Button>
+      {state.message && (
+        <p
+          role="status"
+          className={cn(
+            "text-sm sm:col-span-2",
+            state.status === "success" ? "text-paper" : "text-accent",
+          )}
+        >
+          {state.message}
+        </p>
+      )}
     </form>
   );
 }
