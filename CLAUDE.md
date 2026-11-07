@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Personal portfolio site (v2). Right now it is still the stock `create-next-app` scaffold: Next.js 16.4 App Router, React 19.3, TypeScript, Tailwind CSS v4.
+Personal portfolio site (v2): Next.js 16.4 App Router, React 19.3, TypeScript, Tailwind CSS v4. Single page: sticky portrait on the left, scrolling content on the right.
 
 ## Commands
 
@@ -29,7 +29,10 @@ AGENTS.md (imported above) is the key rule: this Next.js version has breaking ch
 
 ## Structure
 
-- `app/layout.tsx`: root layout. Loads the Geist fonts with `next/font`.
-- `app/page.tsx`: home page.
-- `public/`: static assets.
+- `app/layout.tsx`: root layout. Loads Geist with `next/font`.
+- `app/page.tsx`: home page; composes the sections.
+- `app/icon.svg`: favicon.
+- `lib/site.ts`, `lib/content.ts`: all site copy and data.
+- `components/ui/`: reusable building blocks; `components/sections/`: page sections; `components/layout/`: header, menu, footer.
+- `public/`: static assets (portrait).
 - Path alias: `@/*` maps to the project root (see `tsconfig.json`).

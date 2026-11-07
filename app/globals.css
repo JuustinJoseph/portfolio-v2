@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ==========================================================================
+   Design tokens
+   Every colour / font / radius used across the site lives here. Tailwind v4
+   turns each `--color-*` into utilities (e.g. `bg-accent`, `text-ink`), so
+   change a value here and the whole site follows.
+   ========================================================================== */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Brand palette */
+  --color-accent: #ff5a1f; /* bright orange: logo badge, highlights */
+  --color-accent-deep: #b8330f; /* hero background base */
+  --color-accent-dark: #3a0d04; /* hero background shadow */
+  --color-ink: #0d0d0d; /* near-black text on light surfaces */
+  --color-paper: #f5f1ec; /* warm off-white text on dark surfaces */
+  --color-highlight: #d4f25a; /* lime: secondary highlight card */
+
+  /* Surfaces & text shades for the dark content area */
+  --color-canvas: #151413; /* page background below the hero */
+  --color-surface: #252322; /* inputs, tiles */
+  --color-muted: #9a958f; /* secondary body text */
+  --color-faint: #3a3735; /* grey second line of section headings */
+
+  /* Typography (variables are injected by next/font in app/layout.tsx) */
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-paper);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* The orange gradient behind the name on the home page. Hero only; everywhere
+   else uses the solid `bg-accent`. */
+@utility bg-accent-gradient {
+  background-color: var(--color-accent-deep);
+  background-image: radial-gradient(
+    ellipse at 80% 15%,
+    var(--color-accent) 0%,
+    var(--color-accent-deep) 45%,
+    var(--color-accent-dark) 100%
+  );
 }
