@@ -85,3 +85,73 @@ export const socialIcons = {
   github: GitHubIcon,
   linkedin: LinkedInIcon,
 } as const;
+
+/** Shared wrapper for the 24px outline icons below (nav icons). */
+function Outline({
+  className,
+  children,
+}: IconProps & { children: React.ReactNode }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className ?? "size-5"}
+      aria-hidden
+    >
+      {children}
+    </svg>
+  );
+}
+
+/** Folder: Projects */
+export function FolderIcon({ className }: IconProps) {
+  return (
+    <Outline className={className}>
+      <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+    </Outline>
+  );
+}
+
+/** Briefcase: Experience */
+export function BriefcaseIcon({ className }: IconProps) {
+  return (
+    <Outline className={className}>
+      <rect x="3" y="7" width="18" height="13" rx="2" />
+      <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18" />
+    </Outline>
+  );
+}
+
+/** Stacked layers: Stack */
+export function LayersIcon({ className }: IconProps) {
+  return (
+    <Outline className={className}>
+      <path d="m12 3 9 5-9 5-9-5 9-5Z" />
+      <path d="m3 13 9 5 9-5" />
+    </Outline>
+  );
+}
+
+/** Graduation cap: Education */
+export function CapIcon({ className }: IconProps) {
+  return (
+    <Outline className={className}>
+      <path d="m2 9 10-5 10 5-10 5-10-5Z" />
+      <path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5M22 9v5" />
+    </Outline>
+  );
+}
+
+/** Envelope: Contact */
+export function MailIcon({ className }: IconProps) {
+  return (
+    <Outline className={className}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
+    </Outline>
+  );
+}

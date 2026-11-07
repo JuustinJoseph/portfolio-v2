@@ -12,6 +12,7 @@ export const site = {
     { label: "Projects", href: "#projects" },
     { label: "Experience", href: "#experience" },
     { label: "Stack", href: "#stack" },
+    { label: "Education", href: "#education" },
     { label: "Contact", href: "#contact" },
   ],
   socials: [

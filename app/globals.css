@@ -40,7 +40,7 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* The orange gradient behind the name on the home page. Hero only; everywhere
+/* The orange gradient behind the name on the home page (desktop). Hero only; everywhere
    else uses the solid `bg-accent`. */
 @utility bg-accent-gradient {
   background-color: var(--color-accent-deep);
@@ -50,6 +50,20 @@ body {
     var(--color-accent-deep) 45%,
     var(--color-accent-dark) 100%
   );
+}
+
+/* Mobile hero: the same gradient, faded in from the dark page colour at the
+   top so the photo above it (on canvas) flows into the orange. */
+@utility bg-accent-gradient-fade {
+  background-color: var(--color-accent-deep);
+  background-image:
+    linear-gradient(to bottom, var(--color-canvas) 0%, transparent 35%),
+    radial-gradient(
+      ellipse at 80% 40%,
+      var(--color-accent) 0%,
+      var(--color-accent-deep) 45%,
+      var(--color-accent-dark) 100%
+    );
 }
 
 @keyframes slide-up {
