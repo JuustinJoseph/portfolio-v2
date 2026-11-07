@@ -37,7 +37,7 @@ export function PortraitPanel() {
         {/* Tagline + socials: plain and centred inside the card on phones;
             its own card with an orange left border on desktop. */}
         <div className="lg:bg-surface lg:border-accent flex flex-col items-center gap-3 px-2 pb-2 text-center lg:shrink-0 lg:flex-row lg:justify-between lg:gap-5 lg:rounded-xl lg:border-l-4 lg:px-6 lg:py-5 lg:text-left">
-          <p className="text-paper text-sm leading-snug font-medium sm:text-base lg:text-lg">
+          <p className="text-paper text-base leading-snug font-medium lg:text-lg">
             {tagline}
           </p>
           <SocialLinks tone="accent" className="shrink-0" />

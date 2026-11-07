@@ -1,23 +1,28 @@
 import { Section } from "@/components/ui/Section";
-import { tools } from "@/lib/content";
+import { TechLogo } from "@/components/ui/TechLogo";
+import { stack } from "@/lib/content";
 
-/** Grid of tools/technologies. Each gets a monogram tile instead of a logo. */
+/** Tools & Stack, one sub-section per category, each tool with its logo. */
 export function Stack() {
   return (
     <Section id="stack" heading={{ top: "Tools &", bottom: "Stack" }}>
-      <ul className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
-        {tools.map((t) => (
-          <li key={t.name} className="flex items-center gap-4 px-3">
-            <span className="bg-paper text-ink grid size-12 shrink-0 place-items-center rounded-xl text-lg font-bold">
-              {t.name[0]}
-            </span>
-            <div>
-              <p className="text-lg font-semibold">{t.name}</p>
-              <p className="text-muted text-sm">{t.note}</p>
-            </div>
-          </li>
+      <div className="flex flex-col gap-10">
+        {stack.map((group) => (
+          <div key={group.category}>
+            <h3 className="text-muted mb-5 px-3 text-sm font-medium tracking-widest uppercase">
+              {group.category}
+            </h3>
+            <ul className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
+              {group.items.map((name) => (
+                <li key={name} className="flex items-center gap-4 px-3">
+                  <TechLogo name={name} />
+                  <p className="text-lg font-semibold">{name}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </Section>
   );
 }

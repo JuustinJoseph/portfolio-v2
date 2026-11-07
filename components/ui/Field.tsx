@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
  * <Field> wraps a label + control; `inputClasses` styles the control itself.
  */
 export const inputClasses =
-  "w-full rounded-lg bg-surface px-4 py-3 text-sm text-paper placeholder:text-muted outline-none ring-accent transition focus:ring-2";
+  "w-full rounded-lg bg-surface px-4 py-3 text-base text-paper sm:text-sm placeholder:text-muted outline-none ring-accent transition focus:ring-2";
 
 export function Field({
   label,
@@ -20,7 +20,7 @@ export function Field({
 }) {
   return (
     <div className={cn("flex flex-col gap-2", className)}>
-      <label htmlFor={htmlFor} className="text-muted text-xs">
+      <label htmlFor={htmlFor} className="text-muted text-sm sm:text-xs">
         {label}
       </label>
       {children}

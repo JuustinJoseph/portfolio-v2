@@ -9,8 +9,8 @@ export const site = {
   /** Optional hero portrait in /public (e.g. "/portrait.jpg"). Leave null for none. */
   portrait: "/portrait.JPEG" as string | null,
   nav: [
-    { label: "Projects", href: "#projects" },
     { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
     { label: "Stack", href: "#stack" },
     { label: "Education", href: "#education" },
     { label: "Contact", href: "#contact" },

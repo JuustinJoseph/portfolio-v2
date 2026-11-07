@@ -31,8 +31,8 @@ export default function Home() {
         <div className="lg:col-start-2">
           <Container className="flex max-w-3xl flex-col gap-20 py-16 lg:gap-32 lg:py-24">
             <About />
-            <Projects />
             <Experience />
+            <Projects />
             <Stack />
             <Education />
             <Contact />

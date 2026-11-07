@@ -34,8 +34,13 @@ type SharedProps = {
 
 type ButtonProps = SharedProps &
   (
-    | { href: string; type?: never }
-    | { href?: undefined; type?: "button" | "submit" }
+    | { href: string; type?: never; onClick?: never }
+    | {
+        href?: undefined;
+        type?: "button" | "submit";
+        onClick?: () => void;
+        "aria-expanded"?: boolean;
+      }
   );
 
 export function Button({
@@ -45,6 +50,7 @@ export function Button({
   icon,
   className,
   children,
+  ...rest
 }: ButtonProps) {
   const classes = cn(
     "group inline-flex items-center justify-center gap-3 text-sm font-medium tracking-wide transition-all duration-200",
@@ -68,7 +74,7 @@ export function Button({
       {content}
     </Link>
   ) : (
-    <button type={type} className={classes}>
+    <button type={type} className={classes} {...rest}>
       {content}
     </button>
   );

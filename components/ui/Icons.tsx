@@ -155,3 +155,69 @@ export function MailIcon({ className }: IconProps) {
     </Outline>
   );
 }
+
+/** + expand toggle (rotate 45° to make an ×) */
+export function PlusIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      className={className ?? "size-[0.85em]"}
+      aria-hidden
+    >
+      <path d="M8 3v10M3 8h10" />
+    </svg>
+  );
+}
+
+/** Music note: Spotifiler */
+export function MusicIcon({ className }: IconProps) {
+  return (
+    <Outline className={className}>
+      <path d="M9 18V5l12-2v13" />
+      <circle cx="6" cy="18" r="3" />
+      <circle cx="18" cy="16" r="3" />
+    </Outline>
+  );
+}
+
+/** Puzzle piece: Fragments */
+export function PuzzleIcon({ className }: IconProps) {
+  return (
+    <Outline className={className}>
+      <path d="M10 3h4v2.5a1.5 1.5 0 0 0 3 0V3h4v7h-2.5a1.5 1.5 0 0 0 0 3H21v8h-7v-2.5a1.5 1.5 0 0 0-3 0V21H3v-8h2.5a1.5 1.5 0 0 0 0-3H3V3h7Z" />
+    </Outline>
+  );
+}
+
+/** Dumbbell: Brogram */
+export function DumbbellIcon({ className }: IconProps) {
+  return (
+    <Outline className={className}>
+      <path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12" />
+    </Outline>
+  );
+}
+
+/** Ringed planet: APOD */
+export function PlanetIcon({ className }: IconProps) {
+  return (
+    <Outline className={className}>
+      <circle cx="12" cy="12" r="5" />
+      <path d="M4.5 15.5C2 18 1.5 20 2.5 21s3-.5 5.5-3M19.5 8.5C22 6 22.5 4 21.5 3s-3 .5-5.5 3" />
+    </Outline>
+  );
+}
+
+/** Sparkles: AI projects */
+export function SparklesIcon({ className }: IconProps) {
+  return (
+    <Outline className={className}>
+      <path d="M10 3.5 11.8 8.2 16.5 10l-4.7 1.8L10 16.5l-1.8-4.7L3.5 10l4.7-1.8L10 3.5Z" />
+      <path d="M18 14v6M15 17h6" />
+    </Outline>
+  );
+}

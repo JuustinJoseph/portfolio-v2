@@ -12,7 +12,7 @@ export function Stats({ className }: { className?: string }) {
     >
       {stats.map((s) => (
         <div key={s.label} className="flex flex-col-reverse text-center">
-          <dt className="text-paper/90 mt-2 text-[0.65rem] leading-snug font-medium tracking-wide uppercase sm:text-xs">
+          <dt className="text-paper/90 mt-2 text-[0.7rem] leading-snug font-medium tracking-wide uppercase sm:text-xs">
             {s.label}
           </dt>
           <dd className="text-4xl font-bold tracking-tight sm:text-6xl">
