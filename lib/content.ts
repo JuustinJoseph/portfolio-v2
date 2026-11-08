@@ -19,7 +19,7 @@ export const about = [
 /** Stats row shown in the hero, under the role. */
 // TODO: confirm these numbers
 export const stats = [
-  { value: "+3", label: "Years of experience" },
+  { value: "+2", label: "Years of experience" },
   { value: "+10", label: "Projects completed" },
   { value: "+5", label: "Technologies shipped" },
 ];
